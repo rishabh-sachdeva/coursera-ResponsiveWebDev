@@ -1,0 +1,62 @@
+<html>
+  <head>
+  
+		<!--bootstrap-->
+        <link rel="stylesheet" href="styles.css" type="text/css"/>
+		<!--own css sheet-->
+		<link rel="stylesheet" href="../bootstrap.css" type="text/css"/>
+		
+		<!-- import jQuery -->
+		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+  </head>
+  
+  
+  <body>
+  
+  <a href="aboutme.html">About Me</a>
+  &nbsp
+  <a href="contactus.html">Contact Us</a>
+  
+  <h1>Carz Gallery</h1>
+  
+  <div class="container">
+      <div class="row">
+	       <div class="col-md-4"> 
+				<img class="small-img"  src="astonMartin.jpg"/>
+		   </div>
+		   
+		   
+	       <div class="col-md-4"> 
+				<img class="small-img"  src="audi.jpg"/>
+		   </div>
+		   
+		   
+	       <div class="col-md-4"> 
+				<img class="small-img"  src="ferrari.jpg"/>
+		   </div>
+	  </div>
+	  
+	  
+	  <!--large image-->
+	  
+	  <div class="row">
+	     <div class ="col-md-12">
+		     <img id="big-image" src="astonMartin.jpg" class="big-image"/>
+		 </div>
+	  </div>
+  </div>
+  
+  
+  <!--jquery function-->
+  <script>
+     $(".small-img").click(function(){
+      console.log($(this));
+	  $("#big-image").attr('src',$(this).attr('src'));
+	 });
+  
+  </script>
+  
+  </body>
+
+</html>
