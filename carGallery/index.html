@@ -4,7 +4,7 @@
 		<!--bootstrap-->
         <link rel="stylesheet" href="styles.css" type="text/css"/>
 		<!--own css sheet-->
-		<link rel="stylesheet" href="../bootstrap.css" type="text/css"/>
+		<link rel="stylesheet" href=".././bootstrap.css" type="text/css"/>
 		
 		<!-- import jQuery -->
 		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
@@ -23,27 +23,36 @@
   <div class="container">
       <div class="row">
 	       <div class="col-md-4"> 
-				<img class="small-img"  src="astonMartin.jpg"/>
+				<img id="image1"  class="small-img"  src="astonMartin.jpg"/>
 		   </div>
 		   
 		   
 	       <div class="col-md-4"> 
-				<img class="small-img"  src="audi.jpg"/>
+				<img id="image2" class="small-img"   src="audi.jpg"/>
 		   </div>
 		   
 		   
 	       <div class="col-md-4"> 
-				<img class="small-img"  src="ferrari.jpg"/>
+				<img class="small-img" id="image3" src="ferrari.jpg"/>
 		   </div>
 	  </div>
 	  
 	  
-	  <!--large image-->
+	  <!--large image, forward and backward navigators-->
 	  
 	  <div class="row">
-	     <div class ="col-md-12">
+	  
+	      <div class="col-md-1">
+	        <button id="backward">&lt;</button>
+	       </div>
+	  
+	     <div class ="col-md-10">
 		     <img id="big-image" src="astonMartin.jpg" class="big-image"/>
 		 </div>
+		 
+		  <div class="col-md-1">
+	       <button id="forward">&gt;</button>
+	     </div>
 	  </div>
   </div>
   
@@ -54,6 +63,24 @@
       console.log($(this));
 	  $("#big-image").attr('src',$(this).attr('src'));
 	 });
+	 
+	  var counter=1;
+	  $("#image"+counter).click();
+	  
+	  $("#backward").click(function(){
+	  console.log("image"+counter);
+	  counter=counter-1;
+	  if(counter<1){
+	  counter=3;
+	  }
+	  $("#image"+counter).click();
+	  });
+	  
+	  $("#forward").click(function(){
+	  counter++;
+	  if(counter>3){counter=1}
+	  $("#image"+counter).click();
+	  });
   
   </script>
   
