@@ -81,6 +81,18 @@
 	  if(counter>3){counter=1}
 	  $("#image"+counter).click();
 	  });
+	  
+	  var pause=false;
+	  setInterval(function(){
+	  if(!pause){
+	  $("#forward").click();
+	  }
+	  },2000);	  
+	  
+	  $("#big-image").click(function(){
+	  pause=!pause;
+	  });
+	  
   
   </script>
   
