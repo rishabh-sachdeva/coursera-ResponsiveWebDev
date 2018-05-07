@@ -1,0 +1,13 @@
+.chapter-thumbnail{
+	margin-top:10px;
+	height:150px;
+	overflow:hidden;
+	border-radius:10px;/*rounded borders*/
+	
+}
+
+#mainViewer{
+	
+	margin-top:10px;
+	
+}
