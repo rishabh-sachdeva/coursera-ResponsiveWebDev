@@ -147,10 +147,29 @@ You know it is the feast of Lupercal.
    $("#mainViewer").html($(this).html());
   }); 
  
+  var counter=1
+  
+  $("#mainViewer").click(function(event){
+  console.log(event.offsetX);
+  console.log("width of element:"+$(this).width())
+  if(event.offsetX<$(this).width()*0.5){
+  counter=counter-1;
+  
+  }else{
+  counter++;
+  }
+  
+  if(counter<1)
+  {counter=1}
+  if(counter>4){
+  counter=4;
+  }
+  
+  $("#chapter"+counter).click();
+  });
+ 
  
  </script>
- 
- 
 </html>
 
 
